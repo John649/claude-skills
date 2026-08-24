@@ -1,6 +1,27 @@
 # claude-skills
 
-Personal Claude Code skills. Install by copying a skill's folder (or loose `.md` file) into `~/.claude/skills/`.
+Personal Claude Code skills. Each skill is a folder with a `SKILL.md` (plus any scripts it needs) or a single loose `.md` file.
+
+## Installation
+
+Clone and copy everything into Claude Code's skills directory:
+
+```bash
+git clone https://github.com/John649/claude-skills.git
+mkdir -p ~/.claude/skills
+cp -r claude-skills/roblox-upload claude-skills/roblox-asset-transfer \
+      claude-skills/install-workflows claude-skills/debuzz \
+      claude-skills/gamepass.md claude-skills/product.md ~/.claude/skills/
+```
+
+Or install just one skill by copying only its folder (or `.md` file). New skills are picked up on the next Claude Code session — invoke with `/<name>` or just describe the task.
+
+### Per-skill prerequisites
+
+- **roblox-upload / gamepass / product** — a Roblox Open Cloud API key in `~/.claude/skills/roblox-upload/config.env` (the skill walks you through creating it on first run; needs the assets + developer-products + game-passes API systems). Requires `bash` and `curl`.
+- **roblox-asset-transfer** — Python, plus two Studio places connected to the Roblox Studio MCP.
+- **install-workflows** — `gh` CLI authenticated with access to `John649/agenticodingworkflows`.
+- **debuzz** — the Antigravity CLI (`agy`) installed and signed in (run `agy` interactively once).
 
 ## Skills
 
